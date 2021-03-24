@@ -21,6 +21,14 @@
     <%= form.text_field :name %>
   </div>
 
+   <div class= "field">collection_check_boxes
+  <ul>
+  <%= form.collection_check_boxes(:strain_ids, @strains, :id, :name, include_hidden: false) do |b|
+  b.label('data-value': b.value) {b.check_box + b.text}
+  end %>
+  </ul>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
